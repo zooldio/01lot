@@ -201,8 +201,8 @@ export const faq = {
       a: "Withdraw to crypto wallet (USDC, USDT, BTC, ETH) or bank transfer (US, EU, UK). Typically clears in under 4 hours.",
     },
     {
-      q: "Is this legal where I live?",
-      a: "01LOT is currently available in 64 countries. Check your jurisdiction at signup — we'll let you know in 2 seconds.",
+      q: "Is this available where I live?",
+      a: "Yes — 01LOT is open to traders worldwide. No country restrictions, no waiting list. Sign up from anywhere and you're in.",
     },
     {
       q: "How do I start?",

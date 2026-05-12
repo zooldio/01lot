@@ -31,8 +31,8 @@ export default function SignupPage() {
                 Create your <span className="text-orange">account.</span>
               </h1>
               <p className="mt-5 max-w-md text-[15.5px] leading-relaxed text-text-dim">
-                Two minutes to register. KYC is instant for 64 countries. Deposit when you&apos;re ready —
-                we don&apos;t charge until your first match settles.
+                Two minutes to register. Available worldwide — every country, no waiting list.
+                Deposit when you&apos;re ready; we don&apos;t charge until your first match settles.
               </p>
 
               <ul className="mt-8 space-y-3 text-[14.5px] text-text-dim">

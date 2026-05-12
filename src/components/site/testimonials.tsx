@@ -48,7 +48,7 @@ export function Testimonials() {
           className="mt-14 flex flex-col items-center gap-4 border-t border-line pt-8 sm:flex-row sm:justify-between"
         >
           <div className="text-mono text-[11px] uppercase tracking-[0.22em] text-text-muted">
-            64 countries · 3,241 traders live · 24/7
+            Every country · 3,241 traders live · 24/7
           </div>
           <div
             aria-hidden

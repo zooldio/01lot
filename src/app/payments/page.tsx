@@ -138,7 +138,7 @@ export default function PaymentsPage() {
           <Capsule t="Segregated funds" b="Held with tier-1 banks across UK, EU, and Africa. Never lent, never margined." />
           <Capsule t="PCI-DSS Level 1" b="Card data tokenised; nothing sensitive ever touches our servers." />
           <Capsule t="3D-Secure 2" b="Every card transaction is challenge-flow enrolled. Chargebacks under 0.08%." />
-          <Capsule t="KYC at signup" b="64 countries supported. Most users clear in under 90 seconds." />
+          <Capsule t="KYC at signup" b="Every country supported. Most users clear in under 90 seconds." />
         </div>
         <p className="mt-8 text-[13px] text-text-muted">
           Regulator and licence detail at <a href="/compliance" className="text-orange underline-offset-4 hover:underline">compliance</a>.

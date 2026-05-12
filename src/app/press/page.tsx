@@ -10,7 +10,7 @@ const releases = [
   { date: "2026-04-22", t: "01LOT crosses $250M in tournament prize money paid out", outlet: "Press release" },
   { date: "2026-03-08", t: "Series B: $42M led by Ribbit to expand into Asia", outlet: "Press release" },
   { date: "2026-01-14", t: "Skill-Based Markets API opens to third-party brokers", outlet: "Press release" },
-  { date: "2025-11-30", t: "01LOT becomes available in 64 countries after EMI license", outlet: "Press release" },
+  { date: "2025-11-30", t: "01LOT opens to traders worldwide — no country restrictions", outlet: "Press release" },
 ];
 
 const coverage = [

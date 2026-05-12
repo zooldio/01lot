@@ -23,8 +23,8 @@ export default function TermsPage() {
         </p>
 
         <h2>2. Account eligibility</h2>
-        <p>You must be 18 or older and a resident of a country where 01LOT operates. We do not accept users
-          from sanctioned jurisdictions. You must complete identity verification before depositing or trading.</p>
+        <p>You must be 18 or older. 01LOT is open to traders worldwide — there are no country
+          restrictions. You must complete identity verification before depositing or trading.</p>
 
         <h2>3. Your account</h2>
         <p>You are responsible for keeping your credentials private. We will never ask for your password. Notify us at

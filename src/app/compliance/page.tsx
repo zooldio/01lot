@@ -52,12 +52,13 @@ export default function CompliancePage() {
           0 gag orders.
         </p>
 
-        <h2>5. AML & sanctions</h2>
+        <h2>5. AML & global availability</h2>
         <p>
-          We screen every new account against the OFAC, UN, EU, and UK sanctions lists at signup and
-          continuously thereafter. Suspicious transaction reports (SARs / STRs) are filed where required.
-          We will freeze and seize funds where we have a reasonable basis to suspect proceeds of crime,
-          consistent with our regulatory obligations.
+          01LOT is open to traders worldwide — there are no country restrictions on account
+          creation. Standard identity verification applies to every signup. Suspicious transaction
+          reports are filed where required by applicable law, and we will freeze funds where we
+          have a reasonable basis to suspect proceeds of crime, consistent with our regulatory
+          obligations.
         </p>
 
         <h2 id="cookies">6. Cookie policy</h2>
