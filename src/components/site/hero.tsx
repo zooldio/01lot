@@ -7,6 +7,7 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import { Marquee } from "@/components/ui/marquee";
 import { OrbitalGlobe } from "@/components/ui/orbital-globe";
 import { hero } from "@/lib/copy";
+import { useT } from "@/lib/i18n-context";
 
 /**
  * Hero — orbital-globe treatment.
@@ -17,6 +18,7 @@ import { hero } from "@/lib/copy";
  * the globe; the LiveMatchCard floats below as the bespoke trading element.
  */
 export function Hero() {
+  const t = useT();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -51,7 +53,7 @@ export function Hero() {
             <span className="relative h-1.5 w-1.5 rounded-full bg-orange" />
           </span>
           <span className="text-mono text-[10.5px] font-medium tracking-[0.22em] uppercase text-text-dim">
-            {hero.eyebrow}
+            {t("hero.eyebrow", hero.eyebrow)}
           </span>
         </motion.div>
 
@@ -60,22 +62,28 @@ export function Hero() {
           style={{ scale: scaleTitle, opacity }}
           className="text-display relative z-10 mx-auto mt-7 max-w-[15ch] text-center text-[clamp(2.75rem,10.5vw,9rem)] leading-[0.92] tracking-[-0.02em] text-text"
         >
-          {hero.title.map((word, i) => (
-            <motion.span
-              key={word}
-              initial={{ y: "110%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.9,
-                delay: 0.1 + i * 0.12,
-                ease: [0.2, 0.85, 0.25, 1],
-              }}
-              className="mr-2.5 inline-block last:mr-0"
-            >
-              {word.replace(".", "")}
-              <span className="text-orange">.</span>
-            </motion.span>
-          ))}
+          {hero.title.map((word, i) => {
+            const translated = t(
+              `hero.title.${i}` as "hero.title.0" | "hero.title.1" | "hero.title.2",
+              word,
+            );
+            return (
+              <motion.span
+                key={`w${i}`}
+                initial={{ y: "110%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.1 + i * 0.12,
+                  ease: [0.2, 0.85, 0.25, 1],
+                }}
+                className="mr-2.5 inline-block last:mr-0"
+              >
+                {translated.replace(".", "")}
+                <span className="text-orange">.</span>
+              </motion.span>
+            );
+          })}
         </motion.h1>
 
         {/* Subhead */}
@@ -85,7 +93,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 mx-auto mt-7 max-w-xl text-center text-[14.5px] leading-relaxed text-text-dim sm:text-[15.5px]"
         >
-          {hero.subtitle}
+          {t("hero.subtitle", hero.subtitle)}
         </motion.p>
 
         {/* CTAs */}
@@ -96,10 +104,10 @@ export function Hero() {
           className="relative z-10 mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <MagneticButton href={hero.ctaPrimaryHref} variant="primary">
-            {hero.ctaPrimary} →
+            {t("hero.ctaPrimary", hero.ctaPrimary)} →
           </MagneticButton>
           <MagneticButton href={hero.ctaSecondaryHref} variant="ghost">
-            {hero.ctaSecondary}
+            {t("hero.ctaSecondary", hero.ctaSecondary)}
           </MagneticButton>
         </motion.div>
 
@@ -111,10 +119,10 @@ export function Hero() {
           className="relative z-10 mx-auto mt-6 flex w-fit items-center gap-3 text-[10.5px] text-text-muted"
         >
           <span className="text-mono uppercase tracking-[0.22em] text-orange">
-            {hero.liveLabel}
+            {t("hero.liveLabel", hero.liveLabel)}
           </span>
           <span className="h-3 w-px bg-line" />
-          <span className="text-mono tabular-nums">{hero.liveCount}</span>
+          <span className="text-mono tabular-nums">{t("hero.liveCount", hero.liveCount)}</span>
         </motion.div>
 
         {/* Stage — orbital globe + live-match overlay */}

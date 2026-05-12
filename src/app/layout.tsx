@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Anton } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/site/lenis-provider";
 import { Cursor } from "@/components/site/cursor";
+import { LocaleProvider } from "@/lib/i18n-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,10 +49,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${anton.variable}`}
     >
       <body className="relative min-h-screen bg-bg text-text antialiased">
-        <LenisProvider>
-          <Cursor />
-          {children}
-        </LenisProvider>
+        <LocaleProvider>
+          <LenisProvider>
+            <Cursor />
+            {children}
+          </LenisProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

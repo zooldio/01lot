@@ -3,10 +3,16 @@
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/ui/logo";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { nav } from "@/lib/copy";
+import { useT } from "@/lib/i18n-context";
 import { cn } from "@/lib/utils";
 
+// Translation key per nav entry, ordered the same as nav.links in copy.ts
+const NAV_KEYS = ["nav.howItWorks", "nav.modes", "nav.compare", "nav.faq"] as const;
+
 export function Nav() {
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,13 +35,13 @@ export function Nav() {
           <Logo />
         </a>
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
-          {nav.links.map((l) => (
+          {nav.links.map((l, i) => (
             <a
               key={l.href}
               href={l.href}
               className="text-[13px] font-medium text-text-dim transition-colors hover:text-text"
             >
-              {l.label}
+              {t(NAV_KEYS[i], l.label)}
             </a>
           ))}
         </nav>
@@ -44,10 +50,11 @@ export function Nav() {
             href={nav.signInHref}
             className="hidden text-[13px] font-medium text-text-dim transition-colors hover:text-text md:inline-flex md:px-3 md:py-2"
           >
-            {nav.signIn}
+            {t("nav.signIn", nav.signIn)}
           </a>
+          <LanguageSwitcher />
           <MagneticButton href={nav.ctaHref} variant="primary" className="text-[12px]">
-            {nav.cta} →
+            {t("nav.cta", nav.cta)} →
           </MagneticButton>
         </div>
       </div>

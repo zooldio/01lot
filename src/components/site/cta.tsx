@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { finalCta } from "@/lib/copy";
+import { useT } from "@/lib/i18n-context";
 
 /**
  * Final CTA — refined treatment.
@@ -21,6 +22,7 @@ const queueStates = [
 ] as const;
 
 export function FinalCta() {
+  const t = useT();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -63,8 +65,8 @@ export function FinalCta() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-display relative z-10 mx-auto mt-6 max-w-[12ch] text-center text-[clamp(2.75rem,8.5vw,7rem)] leading-[0.94] tracking-[-0.02em] text-text"
         >
-          <span className="block">{finalCta.title[0]}</span>
-          <span className="block text-orange">{finalCta.title[1]}</span>
+          <span className="block">{t("finalCta.title.0", finalCta.title[0])}</span>
+          <span className="block text-orange">{t("finalCta.title.1", finalCta.title[1])}</span>
         </motion.h2>
 
         <motion.p
@@ -74,7 +76,7 @@ export function FinalCta() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto mt-6 max-w-md text-center text-[14.5px] leading-relaxed text-text-dim"
         >
-          {finalCta.body}
+          {t("finalCta.body", finalCta.body)}
         </motion.p>
 
         {/* Matchmaking widget */}
@@ -98,7 +100,7 @@ export function FinalCta() {
           className="relative z-10 mt-9 flex justify-center"
         >
           <MagneticButton href={finalCta.href} variant="primary" className="px-8 py-4 text-[14px]">
-            {finalCta.cta} →
+            {t("finalCta.cta", finalCta.cta)} →
           </MagneticButton>
         </motion.div>
       </div>

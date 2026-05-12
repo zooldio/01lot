@@ -1,7 +1,19 @@
+"use client";
+
 import { Logo } from "@/components/ui/logo";
 import { footer } from "@/lib/copy";
+import { useT } from "@/lib/i18n-context";
+import type { TranslationKey } from "@/lib/i18n";
+
+const COLUMN_KEYS: TranslationKey[] = [
+  "footer.product",
+  "footer.company",
+  "footer.resources",
+  "footer.legal",
+];
 
 export function Footer() {
+  const t = useT();
   return (
     <footer className="border-t border-line bg-bg-elev/60">
       <div className="container-x py-14">
@@ -11,13 +23,13 @@ export function Footer() {
               <Logo />
             </a>
             <p className="mt-4 text-[13.5px] text-text-dim max-w-xs leading-relaxed">
-              {footer.tagline}
+              {t("footer.tagline", footer.tagline)}
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {footer.columns.map((col) => (
+            {footer.columns.map((col, i) => (
               <div key={col.title}>
-                <h4 className="eyebrow">{col.title}</h4>
+                <h4 className="eyebrow">{t(COLUMN_KEYS[i], col.title)}</h4>
                 <ul className="mt-4 space-y-2.5">
                   {col.links.map((l) => (
                     <li key={l.label}>
