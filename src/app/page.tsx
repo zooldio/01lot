@@ -2,6 +2,7 @@ import { Nav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { ThreeSteps } from "@/components/site/three-steps";
 import { BattleCards } from "@/components/site/battle-cards";
+import { PromoVideo } from "@/components/site/promo-video";
 import { Comparison } from "@/components/site/comparison";
 import { Stats } from "@/components/site/stats";
 import { Payments } from "@/components/site/payments";
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <ThreeSteps />
         <BattleCards />
+        <PromoVideo />
         <Comparison />
         <Stats />
         <Payments />
