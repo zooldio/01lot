@@ -4,9 +4,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   countryByCode,
+  COUNTRY_COUNT,
   flagOf,
   searchCountries,
-  type Country,
 } from "@/lib/countries";
 import { cn } from "@/lib/utils";
 
@@ -90,7 +90,7 @@ export function PhoneInput({
     el?.scrollIntoView({ block: "nearest" });
   }, [highlight]);
 
-  const pick = (c: Country) => {
+  const pick = (c: { code: string }) => {
     onCountryChange(c.code);
     setOpen(false);
     setQuery("");
@@ -204,6 +204,14 @@ export function PhoneInput({
                 className="w-full rounded-md border border-line-strong bg-bg/50 px-3 py-2 text-[13px] text-text placeholder:text-text-muted focus:border-orange/40 focus:outline-none"
                 autoComplete="off"
               />
+              <div className="mt-1.5 flex items-center justify-between px-1 text-mono text-[10.5px] uppercase tracking-[0.16em] text-text-muted">
+                <span>
+                  {query
+                    ? `${list.length} of ${COUNTRY_COUNT}`
+                    : `${COUNTRY_COUNT} dial codes`}
+                </span>
+                <span>↑↓ navigate · ↵ select</span>
+              </div>
             </div>
             <div ref={listRef} className="max-h-72 overflow-y-auto py-1">
               {list.length === 0 ? (
@@ -213,30 +221,38 @@ export function PhoneInput({
               ) : (
                 list.map((c, i) => {
                   const selected = c.code === country;
+                  const prev = list[i - 1];
+                  const showDivider = !query && (i === 0 || (prev && prev.section !== c.section));
                   return (
-                    <button
-                      key={c.code}
-                      type="button"
-                      role="option"
-                      aria-selected={selected}
-                      onClick={() => pick(c)}
-                      onMouseEnter={() => setHighlight(i)}
-                      className={cn(
-                        "flex w-full items-center gap-3 px-4 py-2 text-left text-[13.5px] transition-colors",
-                        highlight === i
-                          ? "bg-white/[0.05] text-text"
-                          : "text-text-dim hover:bg-white/[0.03] hover:text-text",
-                        selected && "text-orange",
+                    <div key={c.code}>
+                      {showDivider && (
+                        <div className="px-4 pb-1 pt-3 text-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-text-muted">
+                          {c.section === "popular" ? "Popular" : "All countries · A–Z"}
+                        </div>
                       )}
-                    >
-                      <span className="flag-row text-[16px] leading-none" aria-hidden>
-                        {flagOf(c.code)}
-                      </span>
-                      <span className="flex-1 truncate">{c.name}</span>
-                      <span className="text-mono text-[11.5px] text-text-muted tabular-nums">
-                        {c.dial}
-                      </span>
-                    </button>
+                      <button
+                        type="button"
+                        role="option"
+                        aria-selected={selected}
+                        onClick={() => pick(c)}
+                        onMouseEnter={() => setHighlight(i)}
+                        className={cn(
+                          "flex w-full items-center gap-3 px-4 py-2 text-left text-[13.5px] transition-colors",
+                          highlight === i
+                            ? "bg-white/[0.05] text-text"
+                            : "text-text-dim hover:bg-white/[0.03] hover:text-text",
+                          selected && "text-orange",
+                        )}
+                      >
+                        <span className="flag-row text-[16px] leading-none" aria-hidden>
+                          {flagOf(c.code)}
+                        </span>
+                        <span className="flex-1 truncate">{c.name}</span>
+                        <span className="text-mono text-[11.5px] text-text-muted tabular-nums">
+                          {c.dial}
+                        </span>
+                      </button>
+                    </div>
                   );
                 })
               )}

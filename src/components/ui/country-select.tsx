@@ -5,9 +5,10 @@ import { motion, AnimatePresence } from "motion/react";
 import {
   countries,
   countryByCode,
+  COUNTRY_COUNT,
   flagOf,
   searchCountries,
-  type Country,
+  type CountryRow,
 } from "@/lib/countries";
 import { cn } from "@/lib/utils";
 
@@ -177,6 +178,14 @@ export function CountrySelect({
                 className="w-full rounded-md border border-line-strong bg-bg/50 px-3 py-2 text-[13px] text-text placeholder:text-text-muted focus:border-orange/40 focus:outline-none"
                 autoComplete="off"
               />
+              <div className="mt-1.5 flex items-center justify-between px-1 text-mono text-[10.5px] uppercase tracking-[0.16em] text-text-muted">
+                <span>
+                  {query
+                    ? `${list.length} of ${COUNTRY_COUNT}`
+                    : `${COUNTRY_COUNT} countries`}
+                </span>
+                <span>↑↓ navigate · ↵ select</span>
+              </div>
             </div>
             <div
               ref={listRef}
@@ -187,21 +196,31 @@ export function CountrySelect({
                   No countries match &ldquo;{query}&rdquo;
                 </div>
               ) : (
-                list.map((c, i) => (
-                  <CountryRow
-                    key={c.code}
-                    c={c}
-                    active={highlight === i}
-                    selected={c.code === value}
-                    showDial={showDial}
-                    onClick={() => {
-                      onChange(c.code);
-                      setOpen(false);
-                      setQuery("");
-                    }}
-                    onHover={() => setHighlight(i)}
-                  />
-                ))
+                list.map((c, i) => {
+                  const prev = list[i - 1];
+                  const showDivider = !query && (i === 0 || (prev && prev.section !== c.section));
+                  return (
+                    <div key={c.code}>
+                      {showDivider && (
+                        <div className="px-4 pb-1 pt-3 text-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-text-muted">
+                          {c.section === "popular" ? "Popular" : "All countries · A–Z"}
+                        </div>
+                      )}
+                      <Row
+                        c={c}
+                        active={highlight === i}
+                        selected={c.code === value}
+                        showDial={showDial}
+                        onClick={() => {
+                          onChange(c.code);
+                          setOpen(false);
+                          setQuery("");
+                        }}
+                        onHover={() => setHighlight(i)}
+                      />
+                    </div>
+                  );
+                })
               )}
             </div>
           </motion.div>
@@ -211,7 +230,7 @@ export function CountrySelect({
   );
 }
 
-function CountryRow({
+function Row({
   c,
   active,
   selected,
@@ -219,7 +238,7 @@ function CountryRow({
   onClick,
   onHover,
 }: {
-  c: Country;
+  c: CountryRow;
   active: boolean;
   selected: boolean;
   showDial: boolean;

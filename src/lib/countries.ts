@@ -292,8 +292,14 @@ export function countryByCode(code: string): Country | undefined {
  * Filter helper: case-insensitive substring match across name, ISO, and dial.
  * Returns popular countries first (in their pinned order) followed by the
  * rest alphabetically by name.
+ *
+ * Each item also carries a `section` flag (`"popular"` | `"all"`) so callers
+ * can render a visual divider between the pinned set and the alphabetised
+ * remainder.
  */
-export function searchCountries(query: string): Country[] {
+export type CountryRow = Country & { section: "popular" | "all" };
+
+export function searchCountries(query: string): CountryRow[] {
   const q = query.trim().toLowerCase();
   const matches = q
     ? countries.filter(
@@ -306,14 +312,22 @@ export function searchCountries(query: string): Country[] {
 
   // Popular first (only when no search query — otherwise relevance > pin)
   if (!q) {
-    const popular = POPULAR_ISO.map((iso) =>
+    const popular: CountryRow[] = POPULAR_ISO.map((iso) =>
       matches.find((c) => c.code === iso),
-    ).filter((c): c is Country => !!c);
-    const rest = matches
+    )
+      .filter((c): c is Country => !!c)
+      .map((c) => ({ ...c, section: "popular" as const }));
+    const rest: CountryRow[] = matches
       .filter((c) => !POPULAR_ISO.includes(c.code))
-      .sort((a, b) => a.name.localeCompare(b.name));
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((c) => ({ ...c, section: "all" as const }));
     return [...popular, ...rest];
   }
 
-  return matches.sort((a, b) => a.name.localeCompare(b.name));
+  return matches
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((c) => ({ ...c, section: "all" as const }));
 }
+
+/** Total number of countries in the registry. Exposed for UI count badges. */
+export const COUNTRY_COUNT = countries.length;
