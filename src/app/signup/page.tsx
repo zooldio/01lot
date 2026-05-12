@@ -28,7 +28,7 @@ export default function SignupPage() {
             <div>
               <span className="eyebrow">Enter the arena</span>
               <h1 className="text-display mt-3 text-[clamp(2.5rem,7vw,5rem)] leading-[0.92] text-text">
-                Create your <span className="text-orange text-glow-orange">account.</span>
+                Create your <span className="text-orange">account.</span>
               </h1>
               <p className="mt-5 max-w-md text-[15.5px] leading-relaxed text-text-dim">
                 Two minutes to register. KYC is instant for 64 countries. Deposit when you&apos;re ready —
