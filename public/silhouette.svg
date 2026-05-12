@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 420" fill="none">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="60%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#000"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sg)" d="
+    M 92 22
+    c -12 0 -22 10 -22 22
+    c 0 8 4 15 10 19
+    c -3 6 -5 12 -5 18
+    c 0 4 1 8 3 11
+    l -22 14
+    c -7 5 -10 12 -10 20
+    l 0 78
+    c 0 6 2 12 6 16
+    l 18 18
+    l -10 60
+    c -2 8 -1 16 3 23
+    l 8 14
+    c 4 7 11 11 19 11
+    l 4 0
+    l 0 60
+    c 0 6 2 12 6 16
+    l 8 8
+    l -2 18
+    l 24 0
+    l -4 -22
+    l 8 -8
+    c 4 -4 6 -10 6 -16
+    l 0 -60
+    l 4 0
+    c 8 0 15 -4 19 -11
+    l 8 -14
+    c 4 -7 5 -15 3 -23
+    l -10 -60
+    l 18 -18
+    c 4 -4 6 -10 6 -16
+    l 0 -78
+    c 0 -8 -3 -15 -10 -20
+    l -22 -14
+    c 2 -3 3 -7 3 -11
+    c 0 -6 -2 -12 -5 -18
+    c 6 -4 10 -11 10 -19
+    c 0 -12 -10 -22 -22 -22
+    z
+  "/>
+  <path opacity="0.15" stroke="#ff5a1f" stroke-width="1.5" fill="none" d="
+    M 92 22 c -12 0 -22 10 -22 22
+    M 130 22 c 12 0 22 10 22 22
+  "/>
+</svg>

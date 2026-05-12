@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 600" fill="none">
+  <defs>
+    <linearGradient id="blade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3f48"/>
+      <stop offset="50%" stop-color="#9aa1ad"/>
+      <stop offset="100%" stop-color="#2a2e36"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5a1f" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff5a1f" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ff5a1f" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <circle cx="40" cy="566" r="14" fill="#1a1d22" stroke="#3a3f48"/>
+  <rect x="34" y="510" width="12" height="56" fill="#1a1d22" stroke="#3a3f48"/>
+  <rect x="6" y="500" width="68" height="10" rx="2" fill="#3a3f48"/>
+  <rect x="6" y="500" width="68" height="3" fill="#9aa1ad"/>
+  <polygon points="40,12 50,500 30,500" fill="url(#blade)"/>
+  <polygon points="40,12 41,500 39,500" fill="url(#edge)"/>
+</svg>
