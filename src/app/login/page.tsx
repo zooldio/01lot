@@ -74,7 +74,7 @@ export default function LoginPage() {
                 <span className="flex-1 border-t border-line" />
               </div>
 
-              <div className="grid gap-2 sm:grid-cols-2">
+              <div className="flex items-center justify-center gap-3">
                 <SocialButton label="Continue with Google" icon={<GoogleIcon />} />
                 <SocialButton label="Continue with Apple" icon={<AppleIcon />} />
               </div>
@@ -124,14 +124,11 @@ function SocialButton({ label, icon }: { label: string; icon?: React.ReactNode }
   return (
     <button
       type="button"
-      className="inline-flex items-center justify-center gap-2 rounded-md border border-line-strong bg-bg-elev px-4 py-2.5 text-[12.5px] font-medium uppercase tracking-wider text-text-dim transition hover:border-orange/50 hover:text-text"
+      aria-label={label}
+      title={label}
+      className="grid h-11 w-11 shrink-0 place-items-center rounded-md border border-line-strong bg-bg-elev text-text-dim transition hover:border-orange/50 hover:bg-bg-elev/80 hover:text-text"
     >
-      {icon && (
-        <span className="grid h-4 w-4 shrink-0 place-items-center" aria-hidden>
-          {icon}
-        </span>
-      )}
-      <span>{label}</span>
+      {icon}
     </button>
   );
 }
