@@ -5,6 +5,7 @@ import { BattleCards } from "@/components/site/battle-cards";
 import { Comparison } from "@/components/site/comparison";
 import { Stats } from "@/components/site/stats";
 import { Payments } from "@/components/site/payments";
+import { Testimonials } from "@/components/site/testimonials";
 import { Faq } from "@/components/site/faq";
 import { FinalCta } from "@/components/site/cta";
 import { Footer } from "@/components/site/footer";
@@ -20,6 +21,7 @@ export default function Home() {
         <Comparison />
         <Stats />
         <Payments />
+        <Testimonials />
         <Faq />
         <FinalCta />
       </main>

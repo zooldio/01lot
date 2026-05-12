@@ -271,6 +271,125 @@ export const payments = {
   ctaHref: "/payments",
 } as const;
 
+export const testimonials = {
+  eyebrow: "Voices from the arena",
+  title: ["A real hub", "of traders."],
+  subtitle:
+    "Ten countries, ten matches, ten different P&Ls. The constant: everyone walks away respecting the format. Wins and losses both.",
+  items: [
+    {
+      handle: "@lagos_long",
+      flag: "🇳🇬",
+      city: "Lagos",
+      country: "Nigeria",
+      elo: "Bronze · ELO 1820",
+      outcome: "+$143",
+      result: "win",
+      quote:
+        "Won my last bracket. First time real-money trading felt like skill — no spread tricks, no slippage excuses. Cash hit my MTN MoMo before I closed the laptop.",
+    },
+    {
+      handle: "@kofi_pip",
+      flag: "🇬🇭",
+      city: "Accra",
+      country: "Ghana",
+      elo: "Silver · ELO 2010",
+      outcome: "−$48",
+      result: "loss",
+      quote:
+        "Lost the Sunday Grand Prix to a guy from Kumasi who out-traded me clean. Got smoked. Still respect the game — better trader took it. That's the whole point.",
+    },
+    {
+      handle: "@dar_fast",
+      flag: "🇹🇿",
+      city: "Dar es Salaam",
+      country: "Tanzania",
+      elo: "Bronze · ELO 1750",
+      outcome: "+$76",
+      result: "win",
+      quote:
+        "Five-minute sprint, $50 stake, walked away with $126. Tigo Pesa hit within the minute. The arena doesn't sleep and I love that.",
+    },
+    {
+      handle: "@sg_short",
+      flag: "🇻🇳",
+      city: "Ho Chi Minh City",
+      country: "Vietnam",
+      elo: "Silver · ELO 1965",
+      outcome: "−$120",
+      result: "loss",
+      quote:
+        "Made it to round 4 of last weekend's bracket, then a JPY trader ran me over. Best 11 minutes of my week. Already signed up for Saturday.",
+    },
+    {
+      handle: "@bkk_gold",
+      flag: "🇹🇭",
+      city: "Bangkok",
+      country: "Thailand",
+      elo: "Gold · ELO 2150",
+      outcome: "+$240",
+      result: "win",
+      quote:
+        "Four-hour marathon on XAU/USD. The chart was the only thing in the room. Logged off +$240, walked the dog. Felt like trading is supposed to feel.",
+    },
+    {
+      handle: "@paris_vol",
+      flag: "🇫🇷",
+      city: "Paris",
+      country: "France",
+      elo: "Silver · ELO 1880",
+      outcome: "−$60",
+      result: "loss",
+      quote:
+        "Got dropped from my first match in three minutes. Came back the next day at a smaller stake, started winning. Skill matchmaking actually works — they put me with my peers.",
+    },
+    {
+      handle: "@nyc_scalp",
+      flag: "🇺🇸",
+      city: "New York",
+      country: "USA",
+      elo: "Silver · ELO 1995",
+      outcome: "+$312",
+      result: "win",
+      quote:
+        "Two prop-firm evaluations, three 'consistency rule' resets. Same week I made $312 here. The math finally makes sense. You earn, you keep.",
+    },
+    {
+      handle: "@dxb_macro",
+      flag: "🇦🇪",
+      city: "Dubai",
+      country: "UAE",
+      elo: "Gold · ELO 2110",
+      outcome: "−$85",
+      result: "loss",
+      quote:
+        "Came in thinking trading was solo. First duel showed me the other guy traded better. Lost. Took notes. Won the next four. Best learning loop in this asset class.",
+    },
+    {
+      handle: "@nbo_bid",
+      flag: "🇰🇪",
+      city: "Nairobi",
+      country: "Kenya",
+      elo: "Bronze · ELO 1820",
+      outcome: "+$94",
+      result: "win",
+      quote:
+        "Stake from M-Pesa, win settles to M-Pesa, money in my hand inside two minutes. 'Same-day withdraw' isn't a slogan here — it's the actual thing.",
+    },
+    {
+      handle: "@jhb_short",
+      flag: "🇿🇦",
+      city: "Johannesburg",
+      country: "South Africa",
+      elo: "Silver · ELO 1925",
+      outcome: "−$50",
+      result: "loss",
+      quote:
+        "Lost a Tuesday bracket to someone I'm fairly sure is a quant. $50 down, an hour smarter. I'll take that trade every week of the year.",
+    },
+  ],
+} as const;
+
 export const footer = {
   tagline: "Trade. Compete. Win.",
   columns: [
