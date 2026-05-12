@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/site/page-shell";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { Field, FormDivider } from "@/components/ui/form-field";
 
 export const metadata: Metadata = {
   title: "Sign in — 01LOT",
@@ -29,34 +30,37 @@ export default function LoginPage() {
 
             <form className="surface-card mt-10 p-6 sm:p-8" action="#" method="post" noValidate>
               <div className="space-y-5">
-                <Field label="Email">
+                <Field label="Email" required>
                   <input
                     type="email"
+                    name="email"
                     required
                     autoComplete="email"
                     placeholder="trader@01lot.example"
-                    className="w-full rounded-md border border-line-strong bg-bg-elev px-4 py-3 text-[14px] text-text outline-none transition focus:border-orange focus:ring-4 focus:ring-orange/20"
+                    className="input"
                   />
                 </Field>
                 <Field
                   label="Password"
+                  required
                   trailing={
-                    <a href="#" className="text-mono text-[11px] uppercase tracking-wider text-text-muted hover:text-orange">
+                    <a href="#" className="text-text-muted hover:text-orange">
                       Forgot?
                     </a>
                   }
                 >
                   <input
                     type="password"
+                    name="password"
                     required
                     autoComplete="current-password"
                     placeholder="••••••••"
-                    className="w-full rounded-md border border-line-strong bg-bg-elev px-4 py-3 text-[14px] text-text outline-none transition focus:border-orange focus:ring-4 focus:ring-orange/20"
+                    className="input"
                   />
                 </Field>
 
                 <label className="flex items-center gap-2 text-[13px] text-text-dim">
-                  <input type="checkbox" className="h-4 w-4 rounded border-line-strong bg-bg-elev accent-orange" />
+                  <input type="checkbox" name="remember" className="input-check" />
                   Keep me signed in
                 </label>
 
@@ -68,10 +72,8 @@ export default function LoginPage() {
                 </button>
               </div>
 
-              <div className="relative my-7 flex items-center text-mono text-[10px] uppercase tracking-widest text-text-muted">
-                <span className="flex-1 border-t border-line" />
-                <span className="px-3">or</span>
-                <span className="flex-1 border-t border-line" />
+              <div className="my-7">
+                <FormDivider />
               </div>
 
               <div className="flex items-center justify-center gap-3">
@@ -97,26 +99,6 @@ export default function LoginPage() {
         </div>
       </section>
     </PageShell>
-  );
-}
-
-function Field({
-  label,
-  trailing,
-  children,
-}: {
-  label: string;
-  trailing?: React.ReactNode;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="block">
-      <div className="mb-1.5 flex items-center justify-between">
-        <span className="text-mono text-[11px] uppercase tracking-widest text-text-muted">{label}</span>
-        {trailing}
-      </div>
-      {children}
-    </label>
   );
 }
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell, PageHeader, PageSection } from "@/components/site/page-shell";
+import { Field } from "@/components/ui/form-field";
 
 export const metadata: Metadata = {
   title: "Contact — 01LOT",
@@ -39,14 +40,18 @@ export default function ContactPage() {
           {/* Form */}
           <form action="#" method="post" className="surface-card p-6 sm:p-8">
             <h2 className="text-display text-[1.5rem] tracking-wide text-text">Send us a message</h2>
-            <div className="mt-6 space-y-5">
+            <div className="mt-7 space-y-5">
               <div className="grid gap-3 sm:grid-cols-2">
-                <Field label="Your name"><input type="text" required className="input" /></Field>
-                <Field label="Email"><input type="email" required className="input" /></Field>
+                <Field label="Your name" required>
+                  <input type="text" name="name" required autoComplete="name" className="input" />
+                </Field>
+                <Field label="Email" required>
+                  <input type="email" name="email" required autoComplete="email" className="input" />
+                </Field>
               </div>
-              <Field label="Topic">
-                <select required className="input">
-                  <option value="">Choose a topic…</option>
+              <Field label="Topic" required>
+                <select required name="topic" className="input" defaultValue="">
+                  <option value="" disabled>Choose a topic…</option>
                   <option>Support / account</option>
                   <option>Press / media</option>
                   <option>Partnership</option>
@@ -55,18 +60,19 @@ export default function ContactPage() {
                   <option>Something else</option>
                 </select>
               </Field>
-              <Field label="Message">
-                <textarea required rows={6} className="input" placeholder="Tell us what's up. Account ID helps if you have one." />
+              <Field label="Message" required>
+                <textarea
+                  required
+                  name="message"
+                  rows={6}
+                  className="input"
+                  placeholder="Tell us what's up. Account ID helps if you have one."
+                />
               </Field>
               <button type="submit" className="btn-primary w-full justify-center !text-[13px]">
                 Send →
               </button>
             </div>
-            <style>{`
-              .input{width:100%;border-radius:6px;background:var(--bg-elev);border:1px solid var(--line-strong);color:var(--text);padding:.75rem 1rem;font-size:14px;outline:none;transition:border-color 150ms,box-shadow 150ms;}
-              .input::placeholder{color:var(--text-muted);}
-              .input:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,90,31,.18);}
-            `}</style>
           </form>
 
           {/* Desks */}
@@ -105,11 +111,3 @@ export default function ContactPage() {
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="text-mono text-[11px] uppercase tracking-widest text-text-muted">{label}</span>
-      <div className="mt-1.5">{children}</div>
-    </label>
-  );
-}

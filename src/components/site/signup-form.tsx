@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CountrySelect } from "@/components/ui/country-select";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { Field } from "@/components/ui/form-field";
 
 /**
  * Client-side signup form. Lives outside the (server-rendered) /signup page
@@ -25,22 +26,22 @@ export function SignupForm() {
 
   return (
     <form className="surface-card relative p-6 sm:p-8" action="#" method="post" noValidate>
-      <h2 className="text-display text-[1.4rem] tracking-wide text-text">
+      <h2 className="text-display text-[1.5rem] tracking-wide text-text">
         Start your arena account
       </h2>
       <p className="mt-1 text-[13px] text-text-muted">Free forever. No card required.</p>
 
       <div className="mt-7 space-y-5">
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="First name">
+          <Field label="First name" required>
             <input type="text" name="firstName" required autoComplete="given-name" className="input" />
           </Field>
-          <Field label="Last name">
+          <Field label="Last name" required>
             <input type="text" name="lastName" required autoComplete="family-name" className="input" />
           </Field>
         </div>
 
-        <Field label="Email">
+        <Field label="Email" required>
           <input
             type="email"
             name="email"
@@ -51,7 +52,7 @@ export function SignupForm() {
           />
         </Field>
 
-        <Field label="Password" hint="Min 10 characters, 1 number, 1 symbol.">
+        <Field label="Password" required hint="Min 10 characters, 1 number, 1 symbol.">
           <input
             type="password"
             name="password"
@@ -62,7 +63,7 @@ export function SignupForm() {
           />
         </Field>
 
-        <Field label="Country of residence">
+        <Field label="Country of residence" required>
           <CountrySelect
             name="country"
             value={country}
@@ -72,7 +73,7 @@ export function SignupForm() {
           />
         </Field>
 
-        <Field label="Phone number" hint="We text a code to confirm. Standard rates apply.">
+        <Field label="Phone number" required hint="We text a code to confirm. Standard rates apply.">
           <PhoneInput
             country={phoneCountry}
             onCountryChange={setPhoneCountry}
@@ -85,11 +86,7 @@ export function SignupForm() {
         </Field>
 
         <label className="flex items-start gap-2 text-[12.5px] text-text-dim">
-          <input
-            type="checkbox"
-            required
-            className="mt-0.5 h-4 w-4 rounded border-line-strong bg-bg-elev accent-orange"
-          />
+          <input type="checkbox" required className="input-check mt-0.5" />
           <span>
             I&apos;m 18+ and accept the{" "}
             <a href="/terms" className="text-orange underline-offset-4 hover:underline">
@@ -119,42 +116,6 @@ export function SignupForm() {
         </a>
         .
       </p>
-
-      <style>{`
-        .input {
-          width: 100%;
-          border-radius: 6px;
-          background: var(--bg-elev);
-          border: 1px solid var(--line-strong);
-          color: var(--text);
-          padding: 0.75rem 1rem;
-          font-size: 14px;
-          outline: none;
-          transition: border-color 150ms, box-shadow 150ms;
-        }
-        .input::placeholder { color: var(--text-muted); }
-        .input:focus { border-color: var(--orange); box-shadow: 0 0 0 4px rgba(61,255,85,0.18); }
-      `}</style>
     </form>
-  );
-}
-
-function Field({
-  label,
-  hint,
-  children,
-}: {
-  label: string;
-  hint?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="block">
-      <span className="text-mono text-[11px] uppercase tracking-widest text-text-muted">
-        {label}
-      </span>
-      <div className="mt-1.5">{children}</div>
-      {hint && <p className="mt-1.5 text-[11.5px] text-text-muted">{hint}</p>}
-    </label>
   );
 }
