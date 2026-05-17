@@ -34,7 +34,7 @@ export default function TournamentsPage() {
         lead="Single-elimination ladders. Up to 256 traders, six rounds, one champion. Pools up to $250,000 paid out to the top 16."
       >
         <div className="flex flex-wrap gap-3">
-          <MagneticButton href="/signup" variant="primary">Register for next bracket →</MagneticButton>
+          <MagneticButton href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" variant="primary">Register for next bracket →</MagneticButton>
           <MagneticButton href="/leaderboards" variant="ghost">Past champions</MagneticButton>
         </div>
       </PageHeader>
@@ -55,7 +55,7 @@ export default function TournamentsPage() {
                   <Stat label="Schedule" value={b.time} />
                   <Stat label="Entry" value={b.entry} />
                 </div>
-                <a href="/signup" className="mt-6 inline-flex items-center gap-2 text-mono text-[12px] uppercase tracking-widest text-orange transition hover:text-orange-bright">
+                <a href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" className="mt-6 inline-flex items-center gap-2 text-mono text-[12px] uppercase tracking-widest text-orange transition hover:text-orange-bright">
                   Reserve a seat →
                 </a>
               </div>
@@ -70,7 +70,7 @@ export default function TournamentsPage() {
             <span className="eyebrow">Upcoming</span>
             <h2 className="text-display mt-3 text-[clamp(1.75rem,3.6vw,2.5rem)] text-text">Next bells</h2>
           </div>
-          <a href="/signup" className="text-mono text-[12px] uppercase tracking-widest text-orange hover:text-orange-bright">
+          <a href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" className="text-mono text-[12px] uppercase tracking-widest text-orange hover:text-orange-bright">
             See all schedule →
           </a>
         </div>

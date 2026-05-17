@@ -42,7 +42,7 @@ export default function PaymentsPage() {
         lead={payments.subtitle}
       >
         <div className="flex flex-wrap gap-3">
-          <MagneticButton href="/signup" variant="primary">
+          <MagneticButton href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" variant="primary">
             Open an account →
           </MagneticButton>
           <MagneticButton href="/contact" variant="ghost">
@@ -158,7 +158,7 @@ export default function PaymentsPage() {
                 Open an account in 90 seconds. Pick your rail at deposit. First match starts immediately.
               </p>
             </div>
-            <MagneticButton href="/signup" variant="primary">
+            <MagneticButton href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" variant="primary">
               Enter the arena →
             </MagneticButton>
           </div>

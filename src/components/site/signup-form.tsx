@@ -111,7 +111,7 @@ export function SignupForm() {
 
       <p className="mt-6 text-center text-[13px] text-text-dim">
         Already have one?{" "}
-        <a href="/login" className="text-orange underline-offset-4 hover:underline">
+        <a href="https://platform.01lot.com/login" className="text-orange underline-offset-4 hover:underline">
           Sign in
         </a>
         .

@@ -30,7 +30,7 @@ export default function ApiDocsPage() {
         }
         lead="Issue an API key from your account dashboard. All endpoints are JSON-over-HTTPS, with a parallel WebSocket firehose for low-latency events."
       >
-        <a href="/signup" className="btn-primary !text-[12px]">Get an API key →</a>
+        <a href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" className="btn-primary !text-[12px]">Get an API key →</a>
       </PageHeader>
 
       <PageSection>

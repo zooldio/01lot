@@ -35,7 +35,7 @@ export default function DuelsPage() {
         lead="Pick an opponent at your skill level. Same symbol, same window, same starting balance. Highest P&L at the buzzer takes the pot. Match in under 90 seconds."
       >
         <div className="flex flex-wrap gap-3">
-          <MagneticButton href="/signup" variant="primary">Find an opponent →</MagneticButton>
+          <MagneticButton href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" variant="primary">Find an opponent →</MagneticButton>
           <MagneticButton href="/spectator" variant="ghost">Watch a live duel</MagneticButton>
         </div>
       </PageHeader>
@@ -87,7 +87,7 @@ export default function DuelsPage() {
               <h2 className="text-display text-[clamp(1.75rem,3.6vw,2.6rem)] text-text">Ready to find an opponent?</h2>
               <p className="mt-2 text-[14.5px] text-text-dim">Average match time: 87 seconds.</p>
             </div>
-            <MagneticButton href="/signup" variant="primary">Enter the arena →</MagneticButton>
+            <MagneticButton href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" variant="primary">Enter the arena →</MagneticButton>
           </div>
         </div>
       </PageSection>

@@ -1,5 +1,15 @@
 /** All site copy in one place */
 
+/**
+ * Auth handoff URLs — every Sign-in / Enter-the-arena CTA on the site
+ * routes here. Login lives on the production app; registration goes
+ * through Zitadel. Update these in ONE place; nav + hero + final-CTA +
+ * inner-page CTAs all pick them up.
+ */
+export const EXTERNAL_LOGIN_URL = "https://platform.01lot.com/login";
+export const EXTERNAL_SIGNUP_URL =
+  "https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname";
+
 export const nav = {
   links: [
     { label: "How it works", href: "/#how-it-works" },
@@ -8,9 +18,9 @@ export const nav = {
     { label: "FAQ", href: "/#faq" },
   ],
   signIn: "Sign in",
-  signInHref: "/login",
+  signInHref: EXTERNAL_LOGIN_URL,
   cta: "Enter the arena",
-  ctaHref: "/signup",
+  ctaHref: EXTERNAL_SIGNUP_URL,
 };
 
 export const hero = {
@@ -19,7 +29,7 @@ export const hero = {
   subtitle:
     "The arena for traders who want to prove it. Match into 1v1 battles or tournaments with real prize pools. No prop firms, no broker spreads — just edge, executed.",
   ctaPrimary: "Enter the arena",
-  ctaPrimaryHref: "/signup",
+  ctaPrimaryHref: EXTERNAL_SIGNUP_URL,
   ctaSecondary: "How it works",
   ctaSecondaryHref: "/#how-it-works",
   liveLabel: "Live now",
@@ -216,7 +226,7 @@ export const finalCta = {
   title: ["Where", "are you?"],
   body: "Create your account. Deposit when you're ready. The next match starts in seconds.",
   cta: "Create your account",
-  href: "/signup",
+  href: EXTERNAL_SIGNUP_URL,
 };
 
 export const payments = {

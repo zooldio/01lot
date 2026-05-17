@@ -27,7 +27,7 @@ export default function SpectatorPage() {
         }
         lead="Watch every duel and tournament final in real time. Their entries, their stops, their P&L — fully transparent the moment a match ends."
       >
-        <MagneticButton href="/signup" variant="primary">Watch free →</MagneticButton>
+        <MagneticButton href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" variant="primary">Watch free →</MagneticButton>
       </PageHeader>
 
       <PageSection>
@@ -54,7 +54,7 @@ export default function SpectatorPage() {
                 <Side name={m.b.name} pnl={m.b.pnl} side="right" />
               </div>
               <div className="border-t border-line px-5 py-3 text-right">
-                <a href="/signup" className="text-mono text-[11.5px] uppercase tracking-widest text-orange hover:text-orange-bright">
+                <a href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" className="text-mono text-[11.5px] uppercase tracking-widest text-orange hover:text-orange-bright">
                   Open the room →
                 </a>
               </div>

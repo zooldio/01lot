@@ -26,7 +26,7 @@ export default function AffiliatePage() {
         }
         lead="Share your link, get paid 20–30% of the house rake on every match your referrals play. No cap, no expiry, no minimum payout."
       >
-        <MagneticButton href="/signup" variant="primary">Get your link →</MagneticButton>
+        <MagneticButton href="https://zero-one-lot-instance-hzo6th.eu1.zitadel.cloud/ui/login/loginname" variant="primary">Get your link →</MagneticButton>
       </PageHeader>
 
       <PageSection>
